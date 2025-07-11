@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
 
   resources :blogs
+  resources :portfolios, only: [:show]   
   
   root to: 'pages#home'
 end
