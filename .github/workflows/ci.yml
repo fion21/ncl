@@ -15,8 +15,8 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.3.0            # Use Ruby 3.3.0 to support error_highlight >= 0.7.0
-          bundler: 2.5.8                 # Ensure compatible bundler
+          ruby-version: 3.3.0
+          bundler: 2.5.8
           bundler-cache: true
 
       - name: Run Brakeman
