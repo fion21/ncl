@@ -15,8 +15,8 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: .ruby-version
-          bundler: 2.5.8          # pin Bundler ≥ 2.4
+          ruby-version: 3.3.0            # Use Ruby 3.3.0 to support error_highlight >= 0.7.0
+          bundler: 2.5.8                 # Ensure compatible bundler
           bundler-cache: true
 
       - name: Run Brakeman
@@ -31,12 +31,12 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: .ruby-version
+          ruby-version: 3.3.0
           bundler: 2.5.8
           bundler-cache: true
 
       - name: Scan for security vulnerabilities in JavaScript dependencies
-        run: bin/importmap audit
+        run: bundle exec importmap audit
 
   lint:
     runs-on: ubuntu-latest
@@ -47,9 +47,9 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: .ruby-version
+          ruby-version: 3.3.0
           bundler: 2.5.8
           bundler-cache: true
 
       - name: Lint code for consistent style
-        run: bin/rubocop -f github
+        run: bundle exec rubocop -f github
