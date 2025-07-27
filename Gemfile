@@ -55,5 +55,6 @@ group :development do
   gem "error_highlight", ">= 0.4.0", platforms: [ :ruby ]
 
   gem 'friendly_id', '~> 5.1'
+  gem 'devise', '~> 4.9', '>= 4.9.3'
 end
 
