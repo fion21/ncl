@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Full RESTful routes for portfolios (includes show, edit, update, destroy, etc.)
   resources :portfolios
 
