@@ -1,54 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Ncl" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>DevcampPortfolio</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= yield :head %>
-
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <header>
-      <nav>
-        <ul>
-          <% if user_signed_in? %>
-            <li><%= link_to "Dashboard", root_path %></li>
-            <li>
-              <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, rel: "nofollow" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-            </li>
-            <li><small>Signed in as <%= current_user.email %></small></li>
-          <% else %>
-            <li><%= link_to "Login", new_user_session_path %></li>
-            <li><%= link_to "Register", new_user_registration_path %></li>
-          <% end %>
-        </ul>
-      </nav>
-    </header>
-
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
+    <% if current_user.is_a?(User) %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Register", new_user_registration_path %>
+      <%= link_to "Login", new_user_session_path %>
     <% end %>
 
-    <main>
-      <%= yield %>
-    </main>
+    <%= yield %>
 
-    <footer>
-      <p>&copy; <%= Time.current.year %> Ncl. All rights reserved.</p>
-    </footer>
+    <% if session[:source] %>
+      <p>Thanks for visiting me from <%= session[:source] %></p>
+    <% end %>
   </body>
 </html>
