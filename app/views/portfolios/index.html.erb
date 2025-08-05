@@ -12,4 +12,10 @@
 <% end %>
 
 
-<%= link_to portfolio_item.title, portfolio_path(portfolio_item) %>
+<% @portfolio_items.each do |portfolio_item| %>
+  <div class="portfolio-item">
+    <h2><%= link_to portfolio_item.title, portfolio_path(portfolio_item) %></h2>
+    <p><%= portfolio_item.subtitle %></p>
+    <p><%= truncate(portfolio_item.body, length: 150) %></p>
+  </div>
+<% end %>
