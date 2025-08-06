@@ -21,6 +21,12 @@
     <%= form.text_area :body %>
   </div>
 
+  <!-- ✅ Add this block for Topic dropdown -->
+  <div>
+    <%= form.label :topic_id, "Topic", style: "display: block" %>
+    <%= form.collection_select :topic_id, Topic.all, :id, :name, prompt: "Select a topic" %>
+  </div>
+
   <div>
     <%= form.submit %>
   </div>
