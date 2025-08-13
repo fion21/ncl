@@ -11,7 +11,7 @@ gem "sprockets-rails"
 gem "sassc-rails"
 
 # Hotwire stack
-gem "importmap-rails", "2.2.1"
+gem "importmap-rails", "2.2.2"
 gem "turbo-rails"
 gem "stimulus-rails"
 
