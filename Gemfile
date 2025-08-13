@@ -25,6 +25,7 @@ gem "friendly_id", "~> 5.1"
 # Platform helpers
 gem "tzinfo-data", platforms: %i[mswin mswin64 mingw x64_mingw jruby]
 gem "bootsnap", require: false
+gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 
 group :development, :test do
   # Modern Ruby debugger (already in your file)

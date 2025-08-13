@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title><%= @page_title %></title>
+    <meta charset="utf-8" />
+    <title><%= @page_title || "App" %></title>
     <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="keywords" content="<%= @seo_keywords %>" />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
   </head>
-
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= render "shared/nav", location: 'top' %>
-
-    <%= login_helper %>
+    <%= render "shared/nav", location: "top" %>
 
     <%= yield %>
 
-    <%= source_helper("application") %>
   </body>
 </html>
