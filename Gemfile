@@ -20,6 +20,7 @@ gem "jbuilder"
 # Auth & slugs (should be available in all envs)
 gem "devise", "~> 4.9", ">= 4.9.3"
 gem "friendly_id", "~> 5.1"
+gem 'petergate', '~> 3.0'
 
 # Platform helpers
 gem "tzinfo-data", platforms: %i[mswin mswin64 mingw x64_mingw jruby]

@@ -1,16 +1,22 @@
 module ApplicationHelper
   def login_helper
-    if user_signed_in?
-      # Always sends DELETE (no JS required)
-      button_to "Log out",
-                destroy_user_session_path,
-                method: :delete,
-                class: "as-link",
-                form: { class: "inline" }
+    if current_user.is_a?(GuestUser)
+      (link_to "Register", new_user_registration_path) +
+      "<br>".html_safe +
+      (link_to "Login", new_user_session_path)
     else
-      link_to("Log in", new_user_session_path) +
-        " | ".html_safe +
-        link_to("Register", new_user_registration_path)
+      link_to "Logout", destroy_user_session_path, method: :delete
     end
+  end
+
+  def source_helper(layout_name)
+    if session[:source]
+      greeting = "Thanks for visiting me from #{session[:source]} and you are on the #{layout_name} layout"
+      content_tag(:p, greeting, class: "source-greeting")
+    end
+  end
+
+  def copyright_generator
+    DevcampViewTool::Renderer.copyright 'Jordan Hudgens', 'All rights reserved'
   end
 end
