@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby "3.3.0" # optional but helpful
 
-gem "rails", "~> 7.2.2", ">= 7.2.2.1"
+gem "rails", "~> 8.0.2"
 gem "pg", "~> 1.6"
 gem "puma", ">= 5.0"
 
