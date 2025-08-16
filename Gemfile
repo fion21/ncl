@@ -11,7 +11,6 @@ gem "sprockets-rails"
 gem "sassc-rails"
 
 # Hotwire stack
-gem "importmap-rails", "2.2.1"
 gem "turbo-rails"
 gem "stimulus-rails"
 
@@ -47,4 +46,5 @@ end
 group :development do
   gem "web-console"
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
+  gem "carrierwave"
 end

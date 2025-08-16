@@ -2,14 +2,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= @page_title %></title>
-    <%= csrf_meta_tags %>
+  <meta charset="utf-8" />
+  <title><%= @page_title || "App" %></title>
 
-    <meta name="keywords" content="<%= @seo_keywords %>" />
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <meta name="viewport" content="<%= @seo_keywords %> width=device-width, initial-scale=1" />
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
+</head>
 
   <body>
     <p class="notice"><%= notice %></p>
