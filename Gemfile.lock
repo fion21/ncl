@@ -169,7 +169,7 @@ GEM
     parser (3.3.9.0)
       ast (~> 2.4.1)
       racc
-    petergate (3.0.0)
+    petergate (3.0.1)
       activerecord (> 4.0.0)
     pg (1.6.0-x86_64-darwin)
     pg (1.6.0-x86_64-linux)
