@@ -57,5 +57,8 @@ jobs:
         env:
           BUNDLER_FORCE_RUBY_PLATFORM: true
 
+      - name: Install gems
+        run: bundle install --jobs 4 --retry 3
+
       - name: Lint code for consistent style
-        run: bin/rubocop -f github
+        run: bundle exec rubocop -f github
