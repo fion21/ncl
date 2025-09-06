@@ -18,13 +18,13 @@ module ApplicationHelper
 
   # Remove external dependency; return the copyright HTML directly
   def copyright_generator
-    "&copy; #{Time.current.year} Fiona Lewis — All rights reserved".html_safe
+    "&copy; #{Time.current.year} NCL — All rights reserved".html_safe
   end
 
   def nav_items
     [
       { url: root_path,       title: 'Home' },
-      { url: about_me_path,   title: 'About Me' },
+      { url: about_me_path,   title: 'About Us' },
       { url: contact_path,    title: 'Contact' },
       { url: blogs_path,      title: 'Blog' },
       { url: portfolios_path, title: 'Portfolio' },
@@ -50,6 +50,6 @@ module ApplicationHelper
   end
 
   def alert_generator(msg)
-    js add_gritter(msg, title: "Fiona Lewis Portfolio", sticky: false)
+    js add_gritter(msg, title: "NCL Previous Cases", sticky: false)
   end
 end
