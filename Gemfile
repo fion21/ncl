@@ -1,51 +1,42 @@
+# Gemfile
 source "https://rubygems.org"
 
-ruby "3.3.0" # optional but helpful
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+# Rails 7 needs Ruby >= 3.1
+ruby ENV.fetch("RUBY_VERSION", "3.3.0")
 
 gem "rails", "~> 7.2.2", ">= 7.2.2.1"
-gem "pg", "~> 1.6"
-gem "puma", ">= 5.0"
+gem "pg", ">= 1.5"                 # PostgreSQL
+gem "puma", "~> 6.4"               # App server
 
-# Asset pipeline / CSS
-gem "sprockets-rails"
-gem "sassc-rails"
+# Sprockets + SCSS + Bootstrap 4 alpha.6
+gem "sassc-rails"                  # SCSS in asset pipeline
+gem "jquery-rails"                 # jQuery for Bootstrap 4 JS
+gem "popper_js", "~> 1.16"         # Popper for Bootstrap 4
+gem "bootstrap", "~> 4.0.0.alpha6" # Your requested Bootstrap version
 
-# Hotwire stack
-gem "turbo-rails"
-gem "stimulus-rails"
+# Auth & misc
+gem "devise", "~> 4.9"
+gem "friendly_id", ">= 5.4"
+gem "petergate", ">= 1.7"
+gem "devcamp_view_tool", "~> 0.1.0"
+gem "jbuilder", "~> 2.11"
+gem "carrierwave", "~> 2.2"
 
-# JSON helpers
-gem "jbuilder"
 
-# Auth & slugs (should be available in all envs)
-gem "devise", "~> 4.9", ">= 4.9.3"
-gem "friendly_id", "~> 5.1"
-gem 'petergate', '~> 3.0'
-
-# Platform helpers
-gem "tzinfo-data", platforms: %i[mswin mswin64 mingw x64_mingw jruby]
+# Optional perf
 gem "bootsnap", require: false
-gem 'bootstrap', '~> 5.2', '>= 5.2.3'
+
+# Windows time zone data
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
-  # Modern Ruby debugger (already in your file)
-  gem "debug", platforms: %i[mri mswin mswin64 mingw x64_mingw], require: "debug/prelude"
-
-  # Linting & security
-  gem "rubocop", require: false
-  gem "rubocop-rails-omakase", require: false
-  gem "brakeman", require: false
-
-  # Pry in Rails console
-  gem "pry-rails"          # brings in 'pry'
-  # Optional add-ons (use only if you need them)
-  # gem "pry-stack_explorer"
-  # gem "pry-remote"
-  # NOTE: Do NOT add 'pry-debugger' on Ruby 3.x
+  gem "debug"           # official Ruby 3+ debugger
+  gem "pry-byebug"      # optional, if you like Pry
 end
 
 group :development do
-  gem "web-console"
-  gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
-  gem "carrierwave"
+  gem "web-console", ">= 4.2.0"
+  gem "listen", "~> 3.8"
 end

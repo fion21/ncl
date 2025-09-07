@@ -5,7 +5,11 @@ module ApplicationHelper
       " ".html_safe +
       (link_to "Login", new_user_session_path, class: style)
     else
-      link_to "Logout", destroy_user_session_path, method: :delete, class: style
+      button_to "Logout",
+                destroy_user_session_path,
+                method: :delete,
+                class: style,
+                form: { class: "inline-block" }
     end
   end
 
@@ -28,7 +32,7 @@ module ApplicationHelper
       { url: contact_path,    title: 'Contact' },
       { url: blogs_path,      title: 'Blog' },
       { url: portfolios_path, title: 'Portfolio' },
-      { url: tech_news_path,  title: 'Tech News' }
+      { url: login_helper,  title: 'Login' }
     ]
   end
 

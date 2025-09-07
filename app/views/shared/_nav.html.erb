@@ -4,17 +4,4 @@
   <div><%= link_to "Contact", contact_path %></div>
   <div><%= link_to "Blog", blogs_path %></div>
   <div><%= link_to "Portfolio", portfolios_path %></div>
-
-  <% if user_signed_in? %>
-    <div>
-      <%= button_to "Log out",
-            destroy_user_session_path,
-            method: :delete,
-            class: "as-link",
-            form: { class: "inline" } %>
-    </div>
-  <% else %>
-    <div><%= link_to "Log in", new_user_session_path %></div>
-    <div><%= link_to "Register", new_user_registration_path %></div>
-  <% end %>
 </div>
