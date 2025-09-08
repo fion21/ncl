@@ -1,12 +1,25 @@
-<% if @portfolio_item.main_image.present? %>
-  <%= image_tag @portfolio_item.main_image.url %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <%= image_tag @portfolio_item.main_image %>
+    </div>
 
-<h1><%= @portfolio_item.title %></h1>
-<em><%= @portfolio_item.subtitle %></em>
+    <div class="col-md-5">
+      <h1><%= @portfolio_item.title %></h1>
 
-<p><%= @portfolio_item.body %></p>
+      <hr>
 
-<% if @portfolio_item.thumb_image.present? %>
-  <%= image_tag @portfolio_item.thumb_image.url %>
-<% end %>
+      <em><%= @portfolio_item.subtitle %></em>
+
+      <p><%= @portfolio_item.body %></p>
+
+      <hr>
+
+      <h3>Technologies Used:</h3>
+
+      <% @portfolio_item.technologies.each do |t| %>
+      <p><%= t.name %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
