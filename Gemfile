@@ -14,7 +14,7 @@ gem "puma", "~> 6.4"               # App server
 gem "sassc-rails"                  # SCSS in asset pipeline
 gem "jquery-rails"                 # jQuery for Bootstrap 4 JS
 gem "popper_js", "~> 1.16"         # Popper for Bootstrap 4
-gem "bootstrap", "~> 4.0.0.alpha6" # Your requested Bootstrap version
+gem "bootstrap", "~> 4.6.2" # Your requested Bootstrap version
 
 # Auth & misc
 gem "devise", "~> 4.9"
