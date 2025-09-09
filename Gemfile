@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Rails 7 needs Ruby >= 3.1
 ruby ENV.fetch("RUBY_VERSION", "3.3.0")
 
-gem "rails", "~> 7.2.2", ">= 7.2.2.1"
+gem "rails", "~> 8.0.2"
 gem "pg", ">= 1.5"                 # PostgreSQL
 gem "puma", "~> 6.4"               # App server
 
