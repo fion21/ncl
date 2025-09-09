@@ -1,13 +1,38 @@
+<!-- app/views/pages/home.html.erb -->
 <div class="inner cover">
-  <h1 class="cover-heading">Welcome to NCL</h1>
-  <p class="lead">We provide practical, business-first counsel in Bangkok—coordinating filings and negotiations with the DBD, BOI, and Immigration while keeping timelines and costs predictable.
+<h1 class="cover-heading">Welcome to North Cloud Legal</h1>
+
+<p class="lead">
+We provide practical, business-first counsel in Bangkok—coordinating filings and negotiations with the DBD, BOI, and Immigration while keeping timelines and costs predictable.
 As a clear, bilingual communicator, we bridge international clients and Thai authorities, turning complex regulations into actionable steps.
 We're responsive, detail-driven, and proactive in risk management, so you'll get fast resolutions and fewer surprises.
+</p>
+
 <hr>
+
+<p class="lead">
 ฉันให้คำแนะนำเชิงปฏิบัติที่คำนึงถึงธุรกิจเป็นหลักในกรุงเทพฯ โดยดูแลงานยื่นและการประสานงานกับกรมพัฒนาธุรกิจการค้า (DBD), สำนักงานคณะกรรมการส่งเสริมการลงทุน (BOI) และตรวจคนเข้าเมือง พร้อมควบคุมกรอบเวลาและค่าใช้จ่ายให้คาดการณ์ได้
 ด้วยการสื่อสารสองภาษาอย่างชัดเจน ฉันเป็นสะพานเชื่อมระหว่างลูกค้าต่างชาติและหน่วยงานไทย เปลี่ยนกฎระเบียบที่ซับซ้อนให้เป็นขั้นตอนที่ทำได้จริง
-ฉันตอบสนองรวดเร็ว ใส่ใจรายละเอียด และมุ่งป้องกันความเสี่ยง ทำให้งานเดินหน้าได้ไวและลดปัญหาที่ไม่คาดคิด</p>
-  <p class="lead">
-    <%= link_to "About Us", about_me_path, class: "btn btn-lg btn-secondary" %>
-  </p>
+ฉันตอบสนองรวดเร็ว ใส่ใจรายละเอียด และมุ่งป้องกันความเสี่ยง ทำให้งานเดินหน้าได้ไวและลดปัญหาที่ไม่คาดคิด
+</p>
+
+<p>Email us: northcloudlegal@gmail.com</p>
+
+
+
+<div class="sidebar-module">
+
+<% fb_share = "https://www.facebook.com/share/16ai8cTUbR/?mibextid=wwXIfr" %>
+<ul class="list-inline">
+<% fb_share = "https://www.facebook.com/share/16ai8cTUbR/?mibextid=wwXIfr" %>
+<li class="list-inline-item">
+<%= link_to fb_share, target: "_blank", rel: "noopener", aria: { label: "Open on Facebook" }, class: "social-link" do %>
+<svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true">
+  <path fill="currentColor" d="M22.675 0h-21.35C.595 0 0 .592 0 1.324v21.352C0 23.407.595 24 1.325 24h11.495v-9.294H9.691V11.01h3.129V8.414c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.1 2.796.143v3.24l-1.919.001c-1.504 0-1.796.715-1.796 1.764v2.313h3.59l-.467 3.696h-3.123V24h6.127C23.406 24 24 23.407 24 22.676V1.324C24 .592 23.406 0 22.675 0z"/>
+</svg>
+<% end %>
+</li>
+
+</ul>
+</div>
 </div>

@@ -1,8 +1,10 @@
 @import "bootstrap";
+@import "font-awesome";
 
-/*
- * Globals
- */
+
+/* =========================
+   Globals
+   ========================= */
 
 /* Links */
 a,
@@ -21,23 +23,26 @@ a:hover {
   border: .05rem solid #fff;
 }
 
+/* =========================
+   Base structure
+   ========================= */
 
-/*
- * Base structure
- */
-
-html,
-body {
+html, body {
   height: 100%;
-  background-color: #333;
 }
+
 body {
   color: #fff;
   text-align: center;
-  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+  /* Stronger shadow so text stays readable over video */
+  text-shadow: 0 2px 6px rgba(0,0,0,.6);
+
+  /* Fallback background image if video can’t play */
+  background: image-url('home_bg.png') no-repeat center center fixed;
+  background-size: cover;
 }
 
-/* Extra markup and styles for table-esque vertical and horizontal centering */
+/* Extra markup and styles for table-esque vertical + horizontal centering */
 .site-wrapper {
   display: table;
   width: 100%;
@@ -46,22 +51,25 @@ body {
   -webkit-box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
           box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
 }
+
 .site-wrapper-inner {
   display: table-cell;
   vertical-align: top;
 }
+
 .cover-container {
   margin-right: auto;
   margin-left: auto;
+
+  /* Ensure the main content sits above video + overlay */
+  position: relative;
+  z-index: 2;
 }
 
 /* Padding for spacing */
-.inner {
-  padding: 2rem;
-}
+.inner { padding: 2rem; }
 
-/* hr line break real line */
-
+/* hr line */
 hr {
   display: block;
   height: 1px;
@@ -71,18 +79,12 @@ hr {
   padding: 0;
 }
 
+/* =========================
+   Header
+   ========================= */
 
-/*
- * Header
- */
-
-.masthead {
-  margin-bottom: 2rem;
-}
-
-.masthead-brand {
-  margin-bottom: 0;
-}
+.masthead { margin-bottom: 2rem; }
+.masthead-brand { margin-bottom: 0; }
 
 .nav-masthead .nav-link {
   padding: .25rem 0;
@@ -93,13 +95,9 @@ hr {
 }
 
 .nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255,255,255,.25);
-}
+.nav-masthead .nav-link:focus { border-bottom-color: rgba(255,255,255,.25); }
 
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
-}
+.nav-masthead .nav-link + .nav-link { margin-left: 1rem; }
 
 .nav-masthead .active {
   color: #fff;
@@ -107,87 +105,64 @@ hr {
 }
 
 @media (min-width: 48em) {
-  .masthead-brand {
-    float: left;
-  }
-  .nav-masthead {
-    float: right;
-  }
+  .masthead-brand { float: left; }
+  .nav-masthead   { float: right; }
 }
 
+/* =========================
+   Cover
+   ========================= */
 
-/*
- * Cover
- */
+.cover { padding: 0 1.5rem; }
 
-.cover {
-  padding: 0 1.5rem;
-}
 .cover .btn-lg {
   padding: .75rem 1.25rem;
   font-weight: bold;
 }
 
+/* =========================
+   Footer
+   ========================= */
 
-/*
- * Footer
- */
+.mastfoot { color: rgba(255,255,255,.5); }
 
-.mastfoot {
-  color: rgba(255,255,255,.5);
-}
-
-
-/*
- * Affix and center
- */
+/* =========================
+   Affix and center
+   ========================= */
 
 @media (min-width: 40em) {
   /* Pull out the header and footer */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
+  .masthead { position: fixed; top: 0; }
+  .mastfoot { position: fixed; bottom: 0; }
+
   /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
+  .site-wrapper-inner { vertical-align: middle; }
+
   /* Handle the widths */
   .masthead,
   .mastfoot,
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
+  .cover-container { width: 100%; }
 }
 
 @media (min-width: 62em) {
   .masthead,
   .mastfoot,
-  .cover-container {
-    width: 55rem;
-  }
+  .cover-container { width: 55rem; }
 }
 
-/*
- * Custom Styles
- */
+/* Lift header/footer above video; don’t override their position */
+.masthead,
+.mastfoot { z-index: 2; }
 
-.card-block {
-  color: black;
-  text-align: left;
-}
+/* =========================
+   Custom Styles
+   ========================= */
 
-.auth-links a {
-  color: black;
-}
+.card-block { color: black; text-align: left; }
 
-.register-text {
-  text-align: right;
-}
+.auth-links a { color: black; }
+
+.register-text { text-align: right; }
 
 .login > .card {
   width: 22rem;
@@ -195,8 +170,17 @@ hr {
   float: none;
 }
 
+.app-footer { color: white; }
 
-#background {
+/* =========================
+   Background video + overlay
+   ========================= */
+
+/* --- Force content above background layers --- */
+.cover-container { position: relative; }
+
+/* background video at the very back */
+.cover-container > #background {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -204,25 +188,32 @@ hr {
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: -100;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  background: image-url('home_bg.png') no-repeat;
-  background-size: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
 }
 
-.app-footer {
-  color: white;
+/* dim overlay above the video */
+.cover-container > .video-dim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 1;
+  pointer-events: none;
 }
 
+/* EVERY other direct child (nav, your .inner.cover, footer, etc.) above both */
+.cover-container > *:not(#background):not(.video-dim) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Extra contrast for white text */
+body { text-shadow: 0 2px 6px rgba(0,0,0,.6); }
 
 
+.cta-email { position: relative; z-index: 3; }
 
 
-
-
-
-
-
-
+.social-link svg { vertical-align: middle; }
+.social-link:hover { opacity: .85; }
 

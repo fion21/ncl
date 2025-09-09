@@ -1,3 +1,4 @@
+# config/application.rb
 require_relative 'boot'
 
 require "rails"
@@ -11,8 +12,6 @@ require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
 require "active_storage/engine"
-
-
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -21,5 +20,6 @@ Bundler.require(*Rails.groups)
 
 module DevcampPortfolio
   class Application < Rails::Application
+    # Keep app settings in here. (No top-level `config.assets...` lines.)
   end
 end

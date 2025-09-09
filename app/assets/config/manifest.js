@@ -2,3 +2,7 @@
 //= link_tree ../images
 //= link_directory ../stylesheets .css
 //= link_directory ../javascripts .js
+
+//= link_directory ../videos .mp4
+//= link_directory ../videos .webm
+//= link_directory ../videos .ogv
