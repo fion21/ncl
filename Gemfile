@@ -41,4 +41,8 @@ end
 group :development do
   gem "web-console", ">= 4.2.0"
   gem "listen", "~> 3.8"
+
+
+  ruby "3.3.0"
+
 end
