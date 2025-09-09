@@ -22,7 +22,7 @@ gem "friendly_id", ">= 5.4"
 gem "petergate", ">= 1.7"
 gem "devcamp_view_tool", "~> 0.1.0"
 gem "jbuilder", "~> 2.11"
-gem "carrierwave", "~> 2.2"
+gem "carrierwave", "~> 3.1"
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
 
