@@ -1,13 +1,11 @@
 
-````markdown
-# North Cloud Legal (NCL)
 
+# North Cloud Legal (NCL)
 
 Corporate website and application codebase for **North Cloud Legal**.
 
-**Live site:** https://northcloudlegal.com
+**Live site:** [https://northcloudlegal.com](https://northcloudlegal.com)
 
----
 
 ## Overview
 
