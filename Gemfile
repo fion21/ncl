@@ -8,7 +8,7 @@ ruby ENV.fetch("RUBY_VERSION", "3.3.0")
 
 gem "rails", "~> 7.2.2", ">= 7.2.2.1"
 gem "pg", ">= 1.5"                 # PostgreSQL
-gem "puma", "~> 6.4"               # App server
+gem "puma", "~> 7.1"               # App server
 
 # Sprockets + SCSS + Bootstrap 4 alpha.6
 gem "sassc-rails"                  # SCSS in asset pipeline
