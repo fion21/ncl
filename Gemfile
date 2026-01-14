@@ -13,7 +13,7 @@ gem "puma", "~> 6.4"               # App server
 # Sprockets + SCSS + Bootstrap 4 alpha.6
 gem "sassc-rails"                  # SCSS in asset pipeline
 gem "jquery-rails"                 # jQuery for Bootstrap 4 JS
-gem "popper_js", "~> 1.16"         # Popper for Bootstrap 4
+gem "popper_js", "~> 2.11"         # Popper for Bootstrap 4
 gem "bootstrap", "~> 4.0.0.alpha6" # Your requested Bootstrap version
 
 # Auth & misc
